@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Туристическая карта Ярославля</title>
+		<link href="style.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+	</head>
+	<body class="dragscroll">
+		<div id="map">
+			<img src="images/map.svg">
+			<div align="center">
+				<div id="legend">
+					<img onclick="drop_out('#legend_open'); return false" src="images/legend.svg" class="legend_btn">
+					<ul id="legend_open">
+						<li>
+							<img onclick="legend_work('.sight'); return false" src="images/sight.svg" class="legend_btn sight_btn">
+							<p>Достопримечательности</p>
+						</li>
+						<li>
+							<img onclick="legend_work('.fun'); return false" src="images/fun.svg" class="legend_btn fun_btn">
+							<p>Места для отдыха и развлечений</p>
+						</li>
+						<li>
+							<img onclick="legend_work('.food'); return false" src="images/food.svg" class="legend_btn food_btn">
+							<p>Места для еды</p>
+						</li>
+						<li>
+							<img onclick="$('.food, .fun, .sight').show('slow');" src="images/all_markers.svg" class="legend_btn">
+							<p>Показать все маркеры</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="elijah_church">
+				<div class="marker_btn sight"><img onclick="open_info('#elijah_church'); return false" src="images/sight.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#elijah_church'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/elijah_church.jpg" class="sight_foto">
+					<p class="sight_name">Церковь Ильи Пророка</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#elijah_church .sight_map'); return false">Советская пл., 7</a></p>
+					<div class="sight_map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2136.2764080049346!2d39.89223201600408!3d57.626786581095814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b2915c8387c33f%3A0x902bfe2bb836d570!2z0KbQtdGA0LrQvtCy0Ywg0JjQu9GM0Lgg0J_RgNC-0YDQvtC60LA!5e0!3m2!1sru!2sru!4v1496924704603" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Храм в центре Ярославля на Советской площади, выдающийся памятник архитектуры ярославской школы зодчества XVII века. Находится в ведении Ярославской и Ростовской епархии и Ярославского музея-заповедника.</p>
+				</div>
+			</div>
+			<div id="znamenskaya_tower">
+				<div class="marker_btn sight"><img onclick="open_info('#znamenskaya_tower'); return false" src="images/sight.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#znamenskaya_tower'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/znamenskaya_tower.jpg" class="sight_foto">
+					<p class="sight_name">Власьевская (Знаменская) башня и Знаменская церковь</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#znamenskaya_tower .sight_map'); return false">пл. Волкова, 2А</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4272.716759294429!2d39.88080695271492!3d57.625392793619106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f4c951ce1c7d66a!2z0JfQvdCw0LzQtdC90YHQutCw0Y8g0LHQsNGI0L3Rjw!5e0!3m2!1sru!2sru!4v1497000124909" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Сдвоенное здание в историческом центре города Ярославля на площади Волкова. Башня является объектом культурного наследия (памятником истории и культуры) федерального, а церковь — регионального значения.</p>
+				</div>
+			</div>
+			<div id="kfc">
+				<div class="marker_btn food"><img onclick="open_info('#kfc'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#kfc'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/kfc.jpg" class="sight_foto">
+					<p class="sight_name">KFC</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#kfc .sight_map'); return false">Комсомольская ул., 5</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1270.3100152195602!2d39.88489922122665!3d57.62471441464102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c077451a9d6c8c!2sKFC!5e0!3m2!1sru!2sru!4v1497011635456" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">KFC – это популярная сеть ресторанов общественного питания в мире (по всему миру функционирует 18 000 ресторанов), специализирующихся на блюдах из свежей курицы. Уникальная рецептура панировки, которая держится в секрете, высокие международные стандарты, которых строго придерживаются во всех ресторанах KFC – вот, что обеспечивает неповторимый вкус всем блюдам KFC.</p>
+				</div>
+			</div>
+			<div id="seven_fridays">
+				<div class="marker_btn food"><img onclick="open_info('#seven_fridays'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#seven_fridays'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/seven_fridays.jpg" class="sight_foto">
+					<p class="sight_name">Семь пятниц</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#seven_fridays .sight_map'); return false">Комсомольская ул., 10 А</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8545.739285546719!2d39.878309048978934!3d57.62409301330495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x17e8b79f0cf62a7e!2z0KHQtdC80Ywg0L_Rj9GC0L3QuNGG!5e0!3m2!1sru!2sru!4v1497023425284" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Первый мультиформатный бар, в самом центре города Ярославля. Каждый гость сможет найти для себя то что ему по душе: Караоке зал/Бар & танцпол/Теплая веранда</p>
+				</div>
+			</div>
+			<div id="damansky_park">
+				<div class="marker_btn fun"><img onclick="open_info('#damansky_park'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#damansky_park'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/damansky_park.jpeg" class="sight_foto">
+					<p class="sight_name">Остров-парк «Даманский»</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#damansky_park .sight_map'); return false">ул. Подзеленье, 1</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6043.261388731104!2d39.89559515464004!3d57.621019840533215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc1191ab61a30ff91!2z0J_QsNGA0Log0L3QsCDQlNCw0LzQsNC90YHQutC-0Lwg0L7RgdGC0YDQvtCy0LU!5e0!3m2!1sru!2sru!4v1497024384527" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Остров-парк «Даманский» – любимое место отдыха жителей и гостей Ярославля. Здесь созданы все условия для комфортного времяпрепровождения: ухоженная территория со множеством деревьев и цветущих клумб, прокаты роликов и велосипедов, палатки с сахарной ватой, выступления музыкантов, а главное, зоны с аттракционами.</p>
+				</div>
+			</div>
+			<div id="planetarium">
+				<div class="marker_btn fun"><img onclick="open_info('#planetarium'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#planetarium'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/planetarium.jpeg" class="sight_foto">
+					<p class="sight_name">Культурно-просветительский центр им. В.В. Терешковой</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#planetarium .sight_map'); return false">ул. Чайковского, 3</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4273.201267573337!2d39.86544728279113!3d57.621273550966265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd3773972d8999e26!2z0JrRg9C70YzRgtGD0YDQvdC-LdC_0YDQvtGB0LLQtdGC0LjRgtC10LvRjNGB0LrQuNC5INGG0LXQvdGC0YAg0LjQvC4g0JIu0JIuINCi0LXRgNC10YjQutC-0LLQvtC5!5e0!3m2!1sru!2sru!4v1497190462755" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Культурно-просветительский центр им.В.В.Терешковой является многокомпонентным учреждением культуры и синтезирует воплощённые прогрессивные научные, технические, обучающие, просвещающие интерактивные возможности.</p>
+				</div>
+			</div>
+			<div id="museum_reserve">
+				<div class="marker_btn sight"><img onclick="open_info('#museum_reserve'); return false" src="images/sight.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#museum_reserve'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/museum_reserve.jpg" class="sight_foto">
+					<p class="sight_name">Ярославский музей-заповедник</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#museum_reserve .sight_map'); return false">Богоявленская пл., 25</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8546.106412298821!2d39.875094749100036!3d57.622532374834435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4abf03c834a382ce!2z0K_RgNC-0YHQu9Cw0LLRgdC60LjQuSDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdGL0Lkg0LjRgdGC0L7RgNC40LrQvi3QsNGA0YXQuNGC0LXQutGC0YPRgNC90YvQuSDQuCDRhdGD0LTQvtC20LXRgdGC0LLQtdC90L3Ri9C5INC80YPQt9C10Lkt0LfQsNC_0L7QstC10LTQvdC40Lo!5e0!3m2!1sru!2sru!4v1497185332044" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Одно из крупнейших учреждений культуры и древнейших объектов туризма Ярославля в самом центре города. Здесь можно найти множество интересных у увлекательных экскурсий.</p>
+				</div>
+			</div>
+			<div id="strelka">
+				<div class="marker_btn sight"><img onclick="open_info('#strelka'); return false" src="images/sight.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#strelka'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/strelka.jpg" class="sight_foto">
+					<p class="sight_name">Стрелка</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#strelka .sight_map'); return false">Ярославль</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.904826125072!2d39.90121954314611!3d57.61772367081772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b291543fa7c2f9%3A0x8ebe51ce3372c11f!2z0KHRgtGA0LXQu9C60LA!5e0!3m2!1sru!2sru!4v1497188029963" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">На стрелке у слияния рек Волги и Которосли стоит памятник 1000-летию Ярославля, комплекс светомузыкальных фонтанов и композиционных клумб. С этого места открывается великолепный вид на Волгу и правый берег Которосли.</p>
+				</div>
+			</div>
+			<div id="rocky_pizza">
+				<div class="marker_btn food"><img onclick="open_info('#rocky_pizza'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#rocky_pizza'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/rocky_pizza.jpg" class="sight_foto">
+					<p class="sight_name">Rocky Pizza</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#rocky_pizza .sight_map'); return false">ул. Свободы, 34 Б</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27138.017106340365!2d39.8755373106481!3d57.61473828427346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b2915fe0c525c5%3A0xbae52959f0c1a6ec!2sRocky+Pizza!5e0!3m2!1sru!2sru!4v1497190153587" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Неаполитанская пицца на дровах в самом центре города Ярославля!</p>
+				</div>
+			</div>
+			<div id="ioan">
+				<div class="marker_btn food"><img onclick="open_info('#ioan'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#ioan'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/ioan.jpg" class="sight_foto">
+					<p class="sight_name">Иоанн Васильевич</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#ioan .sight_map'); return false">Революционная ул., 34</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17091.164864503968!2d39.874099852560825!3d57.62475978102954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x25f364f7f5c137ac!2z0JjQvtCw0L3QvSDQktCw0YHQuNC70YzQtdCy0LjRhw!5e0!3m2!1sru!2sru!4v1497191070668" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Иоанн Васильевич – ресторан, воссоздающий атмосферу нетленного киношедевра Леонида Гайдая.</p>
+				</div>
+			</div>
+			<div id="poplavok">
+				<div class="marker_btn food"><img onclick="open_info('#poplavok'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#poplavok'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/poplavok.jpg" class="sight_foto">
+					<p class="sight_name">Поплавок</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#poplavok .sight_map'); return false">ул. Подзеленье</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12085.661474949447!2d39.8823203791182!3d57.62360883898483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe5a5fe7faa96451c!2z0J_QvtC_0LvQsNCy0L7Qug!5e0!3m2!1sru!2sru!4v1497191562424" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Ресторан Поплавок – любимец модной публики и гостей города, украсивший однажды самую красивую набережную в центре Ярославля.</p>
+				</div>
+			</div>
+			<div id="dudki">
+				<div class="marker_btn food"><img onclick="open_info('#dudki'); return false" src="images/food.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#dudki'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/dudki.jpg" class="sight_foto">
+					<p class="sight_name">ДудкиБар</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#dudki .sight_map'); return false">ул. Собинова, 33</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8545.513075077279!2d39.879030301397805!3d57.625054609898775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b834616cc03cb51!2z0JTRg9C00LrQuNCR0LDRgA!5e0!3m2!1sru!2sru!4v1497192092256" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Бар-ресторан в самом центре города. По-европейски большие порции, много вкусных соусов, ароматных травок. Красивое оформление блюд. Обширное гриль-меню. Десерты и хлеб собственного приготовления. В общем, скажем без лишней скромности: еда в Дудках покоряет!</p>
+				</div>
+			</div>
+			<div id="cosmik">
+				<div class="marker_btn fun"><img onclick="open_info('#cosmik'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#cosmik'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/cosmik.jpg" class="sight_foto">
+					<p class="sight_name">Космик</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#cosmik .sight_map'); return false">ул. Победы, 41</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12085.34357832145!2d39.87573478933386!3d57.62456438912408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x49f28be3b27f6f40!2z0JrQvtGB0LzQuNC6!5e0!3m2!1sru!2sru!4v1497193543080" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Парки развлечений Космик - это отличный отдых для всей семьи! Огромные игровые зоны с невероятными аттракционами, видеоиграми, разнообразными автоматами – для взрослых и детей любого возраста! Современный боулинг, оснащенный новейшим оборудованием от лидеров мировой боулинг индустрии.</p>
+				</div>
+			</div>
+			<div id="tuz">
+				<div class="marker_btn fun"><img onclick="open_info('#tuz'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#tuz'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/tuz.jpg" class="sight_foto">
+					<p class="sight_name">ТЮЗ</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#tuz .sight_map'); return false">ул. Свободы, 23</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6042.889376581556!2d39.88071148887448!3d57.62325631550828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x662183a422b2863b!2z0K_RgNC-0YHQu9Cw0LLRgdC60LjQuSDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdGL0Lkg0YLQtdCw0YLRgCDRjtC90L7Qs9C-INC30YDQuNGC0LXQu9GP!5e0!3m2!1sru!2sru!4v1497193944912" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Двадцать семь лет творческой деятельности сформировали Ярославский театр юного зрителя как уникальный творческий коллектив. Он по праву вызывает интерес и любовь молодого театрального зрителя и серьезное внимание опытных театралов города.</p>
+				</div>
+			</div>
+			<div id="einstein_museum">
+				<div class="marker_btn fun"><img onclick="open_info('#einstein_museum'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#einstein_museum'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/einstein_museum.jpeg" class="sight_foto">
+					<p class="sight_name">Музей занимательных наук Эйнштейна</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#einstein_museum .sight_map'); return false">ул. Собинова, 47</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1068.2349950060498!2d39.880351194058434!3d57.62349501583263!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x231d889e7f59c42!2z0JzRg9C30LXQuSDQt9Cw0L3QuNC80LDRgtC10LvRjNC90YvRhSDQvdCw0YPQuiDQrdC50L3RiNGC0LXQudC90LA!5e0!3m2!1sru!2sru!4v1497194663457" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Уникальный научно-развлекательный центр создан для того, чтобы показать детям и их родителям, как интересно и весело учиться. Более ста экспонатов могут в игровой форме красочно показать физические и химические процессы – механика, маятники, иллюзии, электричество и многое другое! </p>
+				</div>
+			</div>
+			<div id="paintball">
+				<div class="marker_btn fun"><img onclick="open_info('#paintball'); return false" src="images/fun.svg"></div>
+				<div class="info">
+					<div class="close_btn">
+						<img onclick="close_info('#paintball'); return false" src="images/close_btn.svg">
+					</div>
+					<img src="fotos/paintball.jpg" class="sight_foto">
+					<p class="sight_name">Багира, пейнтбольный клуб</p>
+					<p class="sight_address">Адрес: <a href="#" onclick="drop_out('#paintball .sight_map'); return false">ул. Закоторосльная 1-я наб., 5</a></p>
+					<div class="sight_map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1068.376524851969!2d39.88604780357732!3d57.618681803869706!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdd373e6ea5e1a46f!2z0JHQsNCz0LjRgNCwLCDQv9C10LnQvdGC0LHQvtC70YzQvdGL0Lkg0LrQu9GD0LE!5e0!3m2!1sru!2sru!4v1497194975895" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					<p class="sight_info">Территория Багиры – это уединенный полуостров в самом центре Ярославля, с возможностью разместить 250 гостей на открытом воздухе. Великолепная природа, чистая и ухоженная территория, современные инфраструктура и развлечения позволяют насладиться природой и комфортом цивилизации.</p>
+				</div>
+			</div>
+		</div>
+		<script src="scripts/jquery-3.2.1.js"></script>
+		<script src="scripts/info_work.js"></script>
+		<script src="scripts/drop_out.js"></script>
+		<script src="scripts/legend_work.js"></script>
+		<script src="scripts/dragscroll.js"></script>
+	</body>
+</html>
